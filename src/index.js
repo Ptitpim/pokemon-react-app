@@ -1,8 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import Pokemon from './components/Pokemon';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './css/index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const Root = () => {
+    return (
+        <Router>
+            <div>
+                <Route exactly path='/' component={App}/>
+                <Route path='/pokemon/:pokemonId' component={Pokemon}/>
+            </div>
+        </Router>
+    )
+};
+
+render(<Root/>, document.getElementById('root'));

@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import SearchResults from './SearchResults'
-import samplePokemons from '../sample-pokemons';
+import samplePokemons from '../data/sample-pokemons';
 import '../css/App.css';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             pokemons: {},
@@ -14,6 +15,7 @@ class App extends Component {
     }
 
     componentDidMount() {
+        // Load the sample file
         this.setState({
             pokemons: samplePokemons
         });
@@ -36,6 +38,14 @@ class App extends Component {
         });
     }
 
+    /**
+     * Display the pokemon page
+     * @param pokemonId
+     */
+    goToPokemon(pokemonId) {
+        this.props.history.push(`/pokemon/${pokemonId}`);
+    }
+
     render() {
         return (
             <form action="" className="pokemon-selector" onSubmit={e => this.searchPokemon(e)}>
@@ -44,10 +54,14 @@ class App extends Component {
                 <input type="text" required placeholder="Pokemon Name" ref={(input) => {this.pokemonInput = input}} />
                 <button type="submit">Search Pokemon</button>
 
-                <SearchResults results={this.state.searchResults} />
+                <SearchResults results={this.state.searchResults} goToPokemon={this.goToPokemon.bind(this)} />
             </form>
         )
     }
 }
+
+App.propTypes = {
+    history: PropTypes.object.isRequired
+};
 
 export default App;
