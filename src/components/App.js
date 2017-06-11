@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import SearchResults from './SearchResults'
 import samplePokemons from '../data/sample-pokemons';
-import '../css/App.css';
 
 class App extends Component {
     constructor(props) {

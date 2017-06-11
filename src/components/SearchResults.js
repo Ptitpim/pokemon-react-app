@@ -5,7 +5,7 @@ import PokemonResult from './PokemonResult';
 class SearchResults extends React.Component {
     render() {
         return (
-            <ul className="list-of-pokemons">
+            <ul className="search-results">
                 {
                     this.props.results.map(pokemon => (
                         <PokemonResult key={`pokemon${pokemon.id}`} details={pokemon} goToPokemon={this.props.goToPokemon} />
