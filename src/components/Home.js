@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import SearchResults from './SearchResults'
 import samplePokemons from '../data/sample-pokemons';
 
-class App extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
 
@@ -59,8 +59,8 @@ class App extends Component {
     }
 }
 
-App.propTypes = {
+Home.propTypes = {
     history: PropTypes.object.isRequired
 };
 
-export default App;
+export default Home;

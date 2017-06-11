@@ -2,7 +2,14 @@
   list-style-type: none;
 }
 
+.search-item {
+  margin-bottom: 10px;
+}
+
 .pokemon-sprite {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
   box-shadow: 1px 1px 5px 0 #cfcfcf;
   cursor: pointer;
 }

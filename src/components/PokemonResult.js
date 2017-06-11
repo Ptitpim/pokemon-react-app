@@ -7,7 +7,7 @@ class PokemonResult extends React.Component {
         const spriteUrl = `/img/sprites/pokemon/${id}.png`;
 
         return(
-            <li onClick={() => this.props.goToPokemon(id)}>
+            <li className="search-item" onClick={() => this.props.goToPokemon(id)}>
                 <img src={spriteUrl} className="pokemon-sprite" alt={names[9]} title={names[9]} />
                 {id} - {names[9]} ({names[5]})
             </li>

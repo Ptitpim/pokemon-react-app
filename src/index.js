@@ -1,16 +1,20 @@
 import React from 'react';
 import {render} from 'react-dom';
-import App from './components/App';
+import Home from './components/Home';
 import Pokemon from './components/Pokemon';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import NotFound from './components/NotFound';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './css/index.css';
 
 const Root = () => {
     return (
         <Router>
             <div>
-                <Route exactly path='/' component={App}/>
-                <Route path='/pokemon/:pokemonId' component={Pokemon}/>
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route path='/pokemon/:pokemonId' component={Pokemon}/>
+                    <Route path="*" component={NotFound}/>
+                </Switch>
             </div>
         </Router>
     )

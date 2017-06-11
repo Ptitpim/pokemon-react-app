@@ -2,10 +2,14 @@ import React from 'react';
 
 class Pokemon extends React.Component {
     render() {
-        const {pokemonId} = this.props.match.params;
+        const {pokemonId: id} = this.props.match.params;
+        const spriteUrl = `/img/sprites/pokemon/${id}.png`;
 
         return (
-            <h2>Pokemon: {pokemonId}</h2>
+            <div>
+                <h2>Pokemon: {id}</h2>
+                <img src={spriteUrl} className="pokemon-sprite" alt='' />
+            </div>
         )
     }
 }
