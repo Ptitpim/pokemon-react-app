@@ -9,7 +9,8 @@ class Home extends Component {
 
         this.state = {
             pokemons: {},
-            searchResults: []
+            searchResults: [],
+            searchName: ''
         };
     }
 
@@ -33,7 +34,8 @@ class Home extends Component {
         });
 
         this.setState({
-            searchResults: results
+            searchResults: results,
+            searchName: pokemonName
         });
     }
 
@@ -53,7 +55,7 @@ class Home extends Component {
                 <input type="text" required placeholder="Pokemon Name" ref={(input) => {this.pokemonInput = input}} />
                 <button type="submit">Search Pokemon</button>
 
-                <SearchResults results={this.state.searchResults} goToPokemon={this.goToPokemon.bind(this)} />
+                <SearchResults results={this.state.searchResults} searchName={this.state.searchName} goToPokemon={this.goToPokemon.bind(this)} />
             </form>
         )
     }

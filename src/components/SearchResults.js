@@ -11,6 +11,8 @@ class SearchResults extends React.Component {
                         <PokemonResult key={`pokemon${pokemon.id}`} details={pokemon} goToPokemon={this.props.goToPokemon} />
                     ))
                 }
+
+                {((this.props.results.length === 0) && (this.props.searchName !== '')) ? <p>No result</p> : null}
             </ul>
         )
     }
@@ -18,6 +20,7 @@ class SearchResults extends React.Component {
 
 SearchResults.propTypes = {
     results: PropTypes.array.isRequired,
+    searchName: PropTypes.string,
     goToPokemon: PropTypes.func.isRequired
 };
 
