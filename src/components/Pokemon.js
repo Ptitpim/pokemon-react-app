@@ -17,7 +17,7 @@ class Pokemon extends React.Component {
 
     componentDidMount() {
         const {pokemonId: id} = this.props.match.params;
-        const url = `http://pokeapi.co/api/v2/pokemon/${id}`;
+        const url = `http://pokeapi.co/api/v2/pokemon/${id}/`;
 
         this.setState({isFetching: true});
 
