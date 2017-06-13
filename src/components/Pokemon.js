@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import PokemonStats from './PokemonStats';
 import PokemonTypes from './PokemonTypes';
@@ -9,6 +10,7 @@ class Pokemon extends React.Component {
 
         this.state = {
             isFetching: false,
+            isEncounterError: false,
             details: {}
         };
     }
@@ -20,12 +22,24 @@ class Pokemon extends React.Component {
         this.setState({isFetching: true});
 
         axios.get(url)
-            .then(response => this.setState(
-                    {
-                        isFetching: false,
-                        details: response.data
-                    }
-                ));
+            .then(response => this.updateInformations(response.data))
+            .catch(error => this.displayError(error));
+    }
+
+    updateInformations(data) {
+        this.setState({
+            isFetching: false,
+            details: data
+        });
+    }
+
+    displayError(error) {
+        this.setState({
+            isFetching: false,
+            isEncounterError: true
+        });
+
+        console.log(error);
     }
 
     render() {
@@ -34,6 +48,8 @@ class Pokemon extends React.Component {
 
         return (
             <div>
+                <Link to="/">Home</Link>
+
                 <h2>Pokemon: {name}</h2>
 
                 {this.state.isFetching ? <p>Loading</p> : null}
