@@ -3,7 +3,7 @@ import React from 'react';
 export default function PokemonTypes(props) {
     return (
         <div className="pokemon-types">
-            <h3>Stats</h3>
+            <h3>Types</h3>
 
             <ul className="types-list">
                 {props.types.map(type => (

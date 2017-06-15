@@ -1,7 +1,4 @@
-@import "search-results";
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+@import "variables";
+@import "common";
+@import "components/search-results";
+@import "components/header";

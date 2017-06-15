@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
 import PokemonStats from './PokemonStats';
 import PokemonTypes from './PokemonTypes';
@@ -48,8 +47,6 @@ class Pokemon extends React.Component {
 
         return (
             <div>
-                <Link to="/">Home</Link>
-
                 <h2>Pokemon: {name}</h2>
 
                 {this.state.isFetching ? <p>Loading</p> : null}

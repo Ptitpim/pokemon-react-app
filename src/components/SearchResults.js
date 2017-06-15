@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 import PokemonResult from './PokemonResult';
 
 class SearchResults extends React.Component {
+    static propTypes = {
+        results: PropTypes.array.isRequired,
+        searchName: PropTypes.string,
+        pickAPokemon: PropTypes.func.isRequired
+    };
+
     render() {
         return (
             <ul className="search-results">
                 {
                     this.props.results.map(pokemon => (
-                        <PokemonResult key={`pokemon${pokemon.id}`} details={pokemon} goToPokemon={this.props.goToPokemon} />
+                        <PokemonResult key={`pokemon${pokemon.id}`} details={pokemon} pickAPokemon={this.props.pickAPokemon} />
                     ))
                 }
 
@@ -17,11 +23,5 @@ class SearchResults extends React.Component {
         )
     }
 }
-
-SearchResults.propTypes = {
-    results: PropTypes.array.isRequired,
-    searchName: PropTypes.string,
-    goToPokemon: PropTypes.func.isRequired
-};
 
 export default SearchResults;
