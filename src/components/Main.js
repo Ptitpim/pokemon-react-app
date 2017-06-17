@@ -9,9 +9,9 @@ class Main extends React.Component {
         return (
             <main className="main">
                 <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route path='/pokemon/:pokemonId' component={Pokemon}/>
-                    <Route path="*" component={NotFound}/>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/pokemon/:pokemonId' component={Pokemon} />
+                    <Route path="*" component={NotFound} />
                 </Switch>
             </main>
         )

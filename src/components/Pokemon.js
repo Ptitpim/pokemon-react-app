@@ -11,7 +11,8 @@ class Pokemon extends React.Component {
             isFetching: false,
             isEncounterError: false,
             pokemonId: 0,
-            details: {}
+            details: {},
+            typesInfos: []
         };
     }
 
@@ -31,8 +32,8 @@ class Pokemon extends React.Component {
         this.setState({isFetching: true});
 
         axios.get(url)
-            .then(response => this.updateInformations(response.data))
-            .catch(error => this.displayError(error));
+            .then(response => this.updateInformations(response.data));
+            //.catch(error => this.displayError(error));
     }
 
     componentWillReceiveProps(nextProps) {
@@ -76,13 +77,13 @@ class Pokemon extends React.Component {
                 {this.state.isEncounterError ? <p>Oops we've had trouble getting the pokemon details</p> : null}
 
                 {(!this.state.isFetching && !this.state.isEncounterError) ? (
-                <div className="pokemon-infos">
-                    <h2>Pokemon: {name}</h2>
+                    <div className="pokemon-infos">
+                        <h2>Pokemon: {name}</h2>
 
-                    <img src={spriteUrl} className="pokemon-sprite" alt='' />
+                        <img src={spriteUrl} className="pokemon-sprite" alt='' />
 
                     {stats ? <PokemonStats stats={stats} /> : null}
-                    {stats ? <PokemonTypes types={types} /> : null}
+                    {stats && types ? <PokemonTypes stats={stats} types={types} /> : null}
                 </div>
                     ) : null}
             </div>

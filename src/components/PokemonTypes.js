@@ -7,7 +7,9 @@ export default function PokemonTypes(props) {
 
             <ul className="types-list">
                 {props.types.map(type => (
-                    <li key={`type-${type.type.name}`}>{type.type.name}</li>
+                    <li key={`type-${type.type.name}`}>
+                        {type.type.name}
+                    </li>
                 ))}
             </ul>
         </div>

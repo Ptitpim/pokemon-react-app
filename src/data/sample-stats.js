@@ -1,34 +1,34 @@
 module.exports = [
     {
         id: 1,
-        label: 'hp'
+        name: 'hp'
     },
     {
         id: 2,
-        label: 'attack'
+        name: 'attack'
     },
     {
         id: 3,
-        label: 'defense'
+        name: 'defense'
     },
     {
         id: 4,
-        label: 'special-attack'
+        name: 'special-attack'
     },
     {
         id: 5,
-        label: 'special-defense'
+        name: 'special-defense'
     },
     {
         id: 6,
-        label: 'speed'
+        name: 'speed'
     },
     {
         id: 7,
-        label: 'accuracy'
+        name: 'accuracy'
     },
     {
         id: 8,
-        label: 'evasion'
+        name: 'evasion'
     }
 ];
