@@ -21,7 +21,7 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="aside">
+            <aside className="aside">
                 <form action="" className="pokemon-selector" onSubmit={e => this.searchPokemon(e)}>
                     <h2>Please Enter A Pokemon Name</h2>
 
@@ -32,7 +32,7 @@ class Search extends Component {
                                    searchName={this.props.searchName}
                                    pickAPokemon={this.props.pickAPokemon} />
                 </form>
-            </div>
+            </aside>
         )
     }
 }
