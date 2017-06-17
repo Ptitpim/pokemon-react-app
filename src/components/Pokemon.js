@@ -78,7 +78,7 @@ class Pokemon extends React.Component {
 
                 {(!this.state.isFetching && !this.state.isEncounterError) ? (
                     <div className="pokemon-infos">
-                        <h2>Pokemon: {name}</h2>
+                        <h2 className="pokemon-title">{name}</h2>
 
                         <img src={spriteUrl} className="pokemon-sprite" alt='' />
 

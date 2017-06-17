@@ -22,16 +22,16 @@ class Search extends Component {
     render() {
         return (
             <aside className="aside">
-                <form action="" className="pokemon-selector" onSubmit={e => this.searchPokemon(e)}>
-                    <h2>Please Enter A Pokemon Name</h2>
+                <h2>Please Enter A Pokemon Name</h2>
 
-                    <input type="text" required placeholder="Pokemon Name" ref={(input) => {this.pokemonInput = input}} />
-                    <button type="submit">Search Pokemon</button>
-
-                    <SearchResults results={this.props.searchResults}
-                                   searchName={this.props.searchName}
-                                   pickAPokemon={this.props.pickAPokemon} />
+                <form className="search-form" onSubmit={e => this.searchPokemon(e)}>
+                    <input className="search-field" type="text" required placeholder="Pokemon Name" ref={(input) => {this.pokemonInput = input}} />
+                    <button className="search-button" type="submit">Search Pokemon</button>
                 </form>
+
+                <SearchResults results={this.props.searchResults}
+                               searchName={this.props.searchName}
+                               pickAPokemon={this.props.pickAPokemon} />
             </aside>
         )
     }

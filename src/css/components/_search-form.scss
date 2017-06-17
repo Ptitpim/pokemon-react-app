@@ -1,0 +1,24 @@
+.search-form {
+  .search-field,
+  .search-button {
+    display: inline-block;
+    padding: 0;
+    height: 30px;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .search-field {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid $input-border;
+  }
+
+  .search-button {
+    padding: 0 20px;
+    border: 0;
+    background-color: $button-background;
+    color: $button-text;
+    cursor: pointer;
+  }
+}
