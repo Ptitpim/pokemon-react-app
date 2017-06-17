@@ -29,6 +29,9 @@ class App extends React.Component {
      */
     pickAPokemon(pokemonId) {
         this.props.history.push(`/pokemon/${pokemonId}`);
+
+        // Scroll to the top of the window
+        window.scrollTo(0, 0);
     }
 
     /**
@@ -36,8 +39,10 @@ class App extends React.Component {
      * @param pokemonName
      */
     searchPokemon(pokemonName) {
+        const reg = new RegExp(`^${pokemonName}`);
+
         const results = this.state.pokemons.filter(pokemon => {
-            return pokemon.names[9].toLowerCase().indexOf(pokemonName) !== -1;
+            return reg.test(pokemon.names[9].toLowerCase());
         });
 
         this.setState({
