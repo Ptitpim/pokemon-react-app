@@ -1,0 +1,84 @@
+.pokemon-stats {
+  .stats-list {
+    display: block;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      display: flex;
+      width: 370px;
+      margin-bottom: 2px;
+      color: #000;
+      align-items: stretch;
+    }
+
+    .stat-label,
+    .stat-progress-bar,
+    .stat-value {
+      display: inline-block;
+    }
+
+    .stat-label {
+      width: 150px;
+      padding-left: 5px;
+    }
+
+    .stat-value {
+      width: 40px;
+    }
+
+    .stat-hp {
+      background-color: #FF5959;
+      border: 1px solid #A60000;
+
+      .stat-progress-bar {
+        background-color: #FF0000;
+      }
+    }
+
+    .stat-attack {
+      background-color: #F5AC78;
+      border: 1px solid #9C531F;
+
+      .stat-progress-bar {
+        background-color: #F08030;
+      }
+    }
+
+    .stat-defense {
+      background-color: #FAE078;
+      border: 1px solid #A1871F;
+
+      .stat-progress-bar {
+        background-color: #F8D030;
+      }
+    }
+
+    .stat-special-attack {
+      background-color: #9DB7F5;
+      border: 1px solid #445E9C;
+
+      .stat-progress-bar {
+        background-color: #6890F0;
+      }
+    }
+
+    .stat-special-defense {
+      background-color: #A7DB8D;
+      border: 1px solid #4E8234;
+
+      .stat-progress-bar {
+        background-color: #78C850;
+      }
+    }
+
+    .stat-speed {
+      background-color: #FA92B2;
+      border: 1px solid #A13959;
+
+      .stat-progress-bar {
+        background-color: #F85888;
+      }
+    }
+  }
+}
