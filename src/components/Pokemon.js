@@ -54,6 +54,8 @@ class Pokemon extends React.Component {
             details: data,
             pokemonId: data.id
         });
+
+        document.title = `${data.name} - Pokemon React App`;
     }
 
     /**
