@@ -10,6 +10,11 @@ body {
   color: #333;
 }
 
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .aside,
 .main {
   float: left;
@@ -18,6 +23,12 @@ body {
 
 .aside {
   width: 350px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .pokemon-sprite {

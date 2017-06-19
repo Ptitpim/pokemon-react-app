@@ -37,9 +37,6 @@ class App extends React.Component {
      */
     pickAPokemon(pokemonId) {
         this.props.history.push(`/pokemon/${pokemonId}`);
-
-        // Scroll to the top of the window
-        window.scrollTo(0, 0);
     }
 
     /**
