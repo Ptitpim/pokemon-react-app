@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class PokemonResult extends React.Component {
     static propTypes = {
+        details: PropTypes.object.isRequired,
         pickAPokemon: PropTypes.func.isRequired
     };
 

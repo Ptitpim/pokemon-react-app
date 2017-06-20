@@ -10,21 +10,21 @@ class Search extends Component {
         pickAPokemon: PropTypes.func.isRequired
     };
 
-    searchPokemon(event) {
+    searchPokemon = (event) => {
         event.preventDefault();
 
         // first grab the text from the box
         const pokemonName = this.pokemonInput.value;
 
         this.props.searchPokemon(pokemonName);
-    }
+    };
 
     render() {
         return (
             <aside className="aside">
                 <h2>Please Enter A Pokemon Name</h2>
 
-                <form className="search-form" onSubmit={e => this.searchPokemon(e)}>
+                <form className="search-form" onSubmit={this.searchPokemon}>
                     <input className="search-field" type="text" required placeholder="Pokemon Name" ref={(input) => {this.pokemonInput = input}} />
                     <button className="search-button" type="submit">Search Pokemon</button>
                 </form>

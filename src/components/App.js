@@ -15,7 +15,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            pokemons: {},
+            pokemons: [],
             searchResults: [],
             searchName: '',
             groupedStats: {}
@@ -35,15 +35,15 @@ class App extends React.Component {
      * Display the pokemon details
      * @param pokemonId
      */
-    pickAPokemon(pokemonId) {
+    pickAPokemon = (pokemonId) => {
         this.props.history.push(`/pokemon/${pokemonId}`);
-    }
+    };
 
     /**
      * Search for a pokemon
      * @param pokemonName
      */
-    searchPokemon(pokemonName) {
+    searchPokemon = (pokemonName) => {
         const reg = new RegExp(`^${pokemonName}`);
 
         const results = this.state.pokemons.filter(pokemon => {
@@ -54,7 +54,7 @@ class App extends React.Component {
             searchResults: results,
             searchName: pokemonName
         });
-    }
+    };
 
     getGroupedStats() {
         let typesInfos = [];
@@ -119,8 +119,8 @@ class App extends React.Component {
                 <Header />
                 <Search searchResults={this.state.searchResults}
                         searchName={this.state.searchName}
-                        searchPokemon={this.searchPokemon.bind(this)}
-                        pickAPokemon={this.pickAPokemon.bind(this)} />
+                        searchPokemon={this.searchPokemon}
+                        pickAPokemon={this.pickAPokemon} />
                 <Main groupedStats={this.state.groupedStats} />
             </div>
         )
